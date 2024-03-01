@@ -10,7 +10,8 @@ int main( int argc, char** argv )
    
 	b.root= NULL;  b.size=0;// tree initially empty
 for ( i = 1; i < argc; ++i ) { 
-      insertNode( &b, atoi(argv[i]));
+      //insertNode( &b, atoi(argv[i]));
+      insertNode_R(&b.root,atoi(argv[i]));
    //  insertNode_R(&b.root,atoi(argv[i]) );
   } // end for
    // traverse the tree preOrder
@@ -18,8 +19,14 @@ for ( i = 1; i < argc; ++i ) {
    preOrder( rootPtr );*/
 
    // traverse the tree inOrder
-   printf("\nThe inOrder traversal is:\n" );
+   printf("\ninOrder\n");
    inOrder( b.root );
+   printf("\npreOrder\n");
+   preOrder( b.root );
+   printf("\npostOrder\n");;
+  postOrder( b.root );
+   printf("\nLab\n");
+    lab(b.root,0);
 /*
    // traverse the tree postOrder
  printf("\nThe postnOrder traversal is:\n" );   postOrder( rootPtr );
